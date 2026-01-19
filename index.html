@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Die Gefährten - Eine Reise zum Licht</title>
+    <style>
+      :root {
+        --bg: #f4f1ea; /* Weicheres Papier-Weiß */
+        --card: #ffffff;
+        --gold-light: #d4af37;
+        --gold-dark: #b8860b;
+        --text: #2c3e50;
+        --text-light: #7f8c8d;
+        --radius: 16px;
+        --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      body {
+        background-color: var(--bg);
+        background-image: url("assets/haeuser-in-der-Mitte-der-Wüste.jpg");
+        background-size: cover;
+        background-position: center;
+        color: var(--text);
+        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .game-container {
+        background: var(--card);
+        padding: 40px;
+        width: 100%;
+        max-width: 500px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        border-top: 8px solid var(--gold-dark);
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      /* Sprach-Schalter oben rechts */
+      .lang-switch {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .lang-btn {
+        background: none;
+        border: 1px solid #ddd;
+        padding: 4px 10px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 0.75rem;
+        width: auto;
+        margin: 0;
+        display: inline-block;
+        transition: 0.2s;
+      }
+
+      .lang-btn:hover {
+        border-color: var(--gold-dark);
+        background: #fff9e6;
+        color: var(--gold-dark);
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-light);
+        margin-bottom: 30px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+      }
+
+      #current-character {
+        color: var(--gold-dark);
+      }
+
+      h2 {
+        font-size: 1.6rem;
+        margin-top: 0;
+        color: var(--gold-dark);
+        text-align: center;
+      }
+
+      #scene-text {
+        line-height: 1.6;
+        font-size: 1.05rem;
+        color: #444;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      /* Buttons Styling */
+      #options-container button {
+        background: white;
+        border: 2px solid #eee;
+        color: var(--text);
+        padding: 16px;
+        margin-bottom: 12px;
+        border-radius: var(--radius);
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        width: 100%;
+        display: block;
+      }
+
+      #options-container button:hover {
+        border-color: var(--gold-light);
+        background: #fffdf9;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(184, 134, 11, 0.15);
+      }
+
+      /* Modal Design */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(44, 62, 80, 0.8);
+        backdrop-filter: blur(4px);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 40px;
+        border-radius: var(--radius);
+        max-width: 380px;
+        text-align: center;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        border-bottom: 5px solid var(--gold-dark);
+      }
+
+      .modal-content h3 {
+        margin-top: 0;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+      }
+
+      #modal-text {
+        font-style: italic;
+        font-size: 1.1rem;
+        color: #555;
+        margin: 20px 0;
+      }
+
+      /* Spezielle Buttons */
+      #close-modal {
+        background: var(--gold-dark);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-weight: bold;
+        width: auto;
+        margin: 0 auto;
+      }
+
+      .share-button {
+        background-color: #27ae60 !important;
+        color: white !important;
+        border: none !important;
+        margin-top: 20px;
+      }
+
+      #result-area {
+        background: #f9f9f9;
+        padding: 15px;
+        border-radius: var(--radius);
+        border: 1px dashed var(--gold-light);
+      }
+      @media (max-width: 480px) {
+        body {
+          padding: 10px; /* Weniger Abstand zum Bildschirmrand */
+          align-items: flex-start; /* Startet oben, falls der Text lang ist */
+          padding-top: 30px;
+        }
+
+        .game-container {
+          padding: 20px; /* Weniger Innenabstand auf dem Handy */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        h2 {
+          font-size: 1.3rem; /* Titel etwas kleiner */
+        }
+
+        #scene-text {
+          font-size: 0.95rem; /* Textgröße leicht reduzieren */
+        }
+
+        .header {
+          font-size: 0.7rem; /* Statuszeile kleiner */
+          flex-direction: column; /* Übereinander stapeln, wenn es zu eng wird */
+          gap: 5px;
+          align-items: center;
+        }
+
+        .modal-content {
+          width: 85%; /* Modal breiter auf dem Handy */
+          padding: 20px;
+        }
+
+        #options-container button {
+          padding: 12px; /* Buttons kompakter */
+          font-size: 0.9rem;
+        }
+      }
+
+      /* Verhindert, dass das Hintergrundbild den Text stört */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(
+          244,
+          241,
+          234,
+          0.7
+        ); /* Heller Schleier über das Wüstenbild */
+        z-index: -1;
+      }
+      /* Styling für den "Nächster Schritt" Button */
+      .next-sahaba-btn {
+        background-color: var(--gold-dark) !important;
+        color: white !important;
+        border: none !important;
+        font-weight: bold !important;
+        margin-top: 25px;
+        box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+        letter-spacing: 1px;
+      }
+
+      .next-sahaba-btn:hover {
+        background-color: #966d09 !important; /* Etwas dunkler beim Hover */
+        transform: scale(1.03) !important; /* Button wird leicht größer */
+      }
+
+      /* Design für die Fortschrittsanzeige oben links */
+      #progress-text {
+        font-weight: bold;
+        color: var(--gold-dark);
+        background: #fff9e6;
+        padding: 2px 8px;
+        border-radius: 8px;
+        margin-right: 5px;
+      }
+
+      /* Kleine Animation für den Übergang */
+      #options-container {
+        animation: fadeIn 0.5s ease-in;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="lang-switch">
+        <button onclick="changeLanguage('de')" class="lang-btn">CH 🇨🇭</button>
+        <button onclick="changeLanguage('tr')" class="lang-btn">TR 🇹🇷</button>
+      </div>
+
+      <div class="header">
+        <div>
+          <span id="progress-text">1 / 7</span> |
+          <span id="current-character">...</span>
+        </div>
+        <span id="match-count">0</span>
+      </div>
+
+      <div id="result-area" style="display: none; margin-top: 30px">
+        <div
+          id="nursi-quote"
+          style="
+            margin-bottom: 20px;
+            font-style: italic;
+            color: var(--gold-dark);
+          "
+        ></div>
+        <button id="share-btn" class="share-button">
+          Ergebnis kopieren 📋
+        </button>
+        <p
+          id="share-status"
+          style="font-size: 0.8rem; color: var(--gold-dark); margin-top: 10px"
+        ></p>
+      </div>
+
+      <h2 id="scene-title">Wird geladen...</h2>
+      <p id="scene-text"></p>
+
+      <div id="options-container"></div>
+    </div>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h3 style="color: var(--gold-dark)">Licht der Weisheit</h3>
+        <p id="modal-text"></p>
+        <button id="close-modal">Weitergehen</button>
+      </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

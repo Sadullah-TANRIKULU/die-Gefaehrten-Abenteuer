@@ -1,0 +1,24 @@
+{
+  "name": "die-gefaehrten-abenteuer",
+  "version": "1.0.0",
+  "description": "die Geschichte von Gefaehrten mit deinem selbst Wahl, ein Abenteuer",
+  "keywords": [
+    "sahaba",
+    "Gefaehrte",
+    "Geschichte",
+    "Koran",
+    "Prophet",
+    "Mekka",
+    "Medina",
+    "Wahrheit",
+    "Einheit",
+    "Allahs"
+  ],
+  "license": "MIT",
+  "author": "Sadullah-TANRIKULU",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  }
+}
