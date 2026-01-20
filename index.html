@@ -1,8 +1,11 @@
 <!doctype html>
-<html lang="de">
+<html lang="tr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#b8860b" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="shortcut icon" href="./assets/bird.png" type="image/x-icon">
     <title>Die Gefährten - Eine Reise zum Licht</title>
     <style>
       :root {
@@ -291,6 +294,23 @@
       <div class="lang-switch">
         <button onclick="changeLanguage('de')" class="lang-btn">CH 🇨🇭</button>
         <button onclick="changeLanguage('tr')" class="lang-btn">TR 🇹🇷</button>
+        <div
+          class="install-container"
+          style="text-align: center; margin-bottom: 10px"
+        >
+          <button
+            id="install-btn"
+            class="lang-btn"
+            style="
+              display: none;
+              background: var(--gold-dark);
+              color: white;
+              border: none;
+            "
+          >
+            📲 App installieren
+          </button>
+        </div>
       </div>
 
       <div class="header">

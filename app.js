@@ -28,6 +28,13 @@ const sahabaSequence = [
   "ali_start",
 ];
 
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("sw.js")
+    .then(() => console.log("Service Worker registriert"))
+    .catch((err) => console.log("SW Fehler:", err));
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   startNewSahaba();
 });
@@ -80,7 +87,7 @@ function renderScene(id) {
       totalChoices++;
       updateHeader(opt.characterChange);
       showModal(
-        opt.wisdom || (currentLang === "de" ? "Ein Schritt..." : "Bir adım..."),
+        opt.wisdom || (currentLang === "de" ? "Ein Schritt aber nicht wie ein Sahabe..." : "Sahabenin tercihi olmadı bu..."),
         opt.nextId,
       );
     };
@@ -158,7 +165,7 @@ function showFinalGlobalStats() {
   // Die Nachricht, die kopiert werden soll
   const shareMsg = isDe
     ? `Meine Reise mit den 7 Gefährten: ${matches}/${totalChoices} Matches (${prozent}% Übereinstimmung).`
-    : `7 Sahabe ile yolculuğum: ${totalChoices} kararda ${matches} uyum (%${prozent}).`;
+    : `7 Sahabe ile yolculuğum: ${totalChoices} kararda ${matches} seçtiklerim de uyumum (%${prozent}).`;
 
   shareBtn.onclick = () => {
     navigator.clipboard
@@ -191,3 +198,26 @@ function changeLanguage(lang) {
   updateProgress(); // Auch die Fortschrittsanzeige übersetzen
   renderScene(currentSceneId);
 }
+
+let deferredPrompt;
+const installBtn = document.getElementById("install-btn");
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  // Zeige den Button an, wenn die App installierbar ist
+  installBtn.style.display = "inline-block";
+});
+
+installBtn.addEventListener("click", () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === "accepted") {
+        console.log("User hat die App installiert");
+      }
+      installBtn.style.display = "none";
+      deferredPrompt = null;
+    });
+  }
+});
