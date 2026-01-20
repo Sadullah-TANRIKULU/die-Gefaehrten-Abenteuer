@@ -3,20 +3,21 @@ const storyData = {
     // --- HZ. OSMAN PFAD (DE) ---
     osman_start: {
       title: "Der Brunnen von Ruma",
-      text: "In Medina herrscht Wasserknappheit. Ein Mann verkauft das Wasser eines Brunnens zu extrem hohen Preisen an die Muslime. Du bist sehr reich. Was tust du?",
+      text: "In Medina herrscht Wasserknappheit. Ein Mann verkauft das Wasser eines Brunnens sehr teuer an die Muslime. Du bist sehr reich. Was tust du?",
       options: [
         {
           text: "Ich kaufe den Brunnen und schenke ihn dem Volk.",
           nextId: "osman_heer",
           isMatch: true,
           trait: "Großzügigkeit",
-          characterChange: "Hz. Osman (Wohltäter)",
+          characterChange: "Wohltätig und Barmherzig",
           wisdom:
-            "Hz. Osman kaufte den Brunnen von Ruma und machte ihn zur Stiftung (Vakıf), damit alle Muslime kostenlos Wasser trinken konnten.",
+            "Er kaufte den Brunnen und machte ihn zur Stiftung (Vakıf), damit alle kostenlos Wasser bekamen.",
         },
         {
-          text: "Ich verhandle mit dem Verkäufer, damit er die Preise senkt.",
+          text: "Ich verhandle mit dem Verkäufer, um die Preise zu senken.",
           nextId: "beobachter_weg",
+          characterChange: "Vorsicht, die Taten verhindert",
           isMatch: false,
         },
       ],
@@ -30,250 +31,256 @@ const storyData = {
           nextId: "osman_koran",
           isMatch: true,
           trait: "Großzügigkeit",
+          characterChange: "Aktiv und Risikofreudig",
           wisdom:
-            "Der Gesandte Allahs (sav) sagte über ihn: 'Was auch immer Osman ab heute tut, es wird ihm nicht schaden'.",
+            "Der Prophet (sav) sagte über ihn: 'Was auch immer Osman ab heute tut, es wird ihm nicht schaden'.",
         },
         {
-          text: "Ich spende eine angemessene Summe und behalte den Rest für meinen Handel.",
+          text: "Ich spende eine passende Summe und behalte den Rest für mein Geschäft.",
           nextId: "welt_ende",
+          characterChange: "Berechnend und geschäftsorientiert",
           isMatch: false,
         },
       ],
     },
     osman_koran: {
       title: "Die Einheit des Buches",
-      text: "Während deines Kalifats bemerkst du Unterschiede und Streitigkeiten bei der Koran-Rezitation. Was tust du?",
+      text: "Als Kalif bemerkst du Unterschiede und Streit bei der Koran-Lesung zwischen verschiedenen Völkern. Was tust du?",
       options: [
         {
-          text: "Ich vereinheitliche den Koran auf einen Dialekt und sende Kopien überall hin.",
+          text: "Ich vereinheitliche den Koran auf einen Dialekt, um Trennung in Brüderlichkeit zu verwandeln.",
           nextId: "osman_finale",
           isMatch: true,
           trait: "Weisheit",
+          characterChange: "Weiser Führer und Friedensbote",
           wisdom:
-            "Dank Hz. Osman liest heute die ganze Welt den Koran aus demselben Mushaf (Buch).",
+            "Heute liest die ganze Welt den Koran aus demselben Buch (Mushaf).",
         },
         {
-          text: "Ich lasse den Menschen die Freiheit, den Koran so zu lesen, wie sie wollen.",
+          text: "Ich lasse den Menschen die Freiheit, so zu lesen, wie sie wollen.",
           nextId: "bequem_ende",
+          characterChange: "Unentschlossen in einer Krise",
           isMatch: false,
         },
       ],
     },
     osman_finale: {
       title: "Licht der Sittsamtkeit",
-      text: "Du hast den Weg von Hz. Osman vollendet. Er war so sittsam, dass sich sogar die Engel vor ihm schämten. \n\nBediüzzaman Said Nursi sagt: 'Wahre Wohltätigkeit ist echte Großzügigkeit, wenn sie an Bedürftige und Arme gerichtet ist. Wenn sie jedoch an jemanden gerichtet ist, der keine Not leidet, macht sie diese Person faul.' Hz. Osman besaß die Welt, aber die Welt konnte nicht in sein Herz eindringen.",
+      text: "Du hast den Weg von Hz. Osman vollendet. Er war so sittsam, dass sich sogar die Engel vor ihm schämten. \n\nBediüzzaman Said Nursi sagt: 'Wohltätigkeit ist wahre Großzügigkeit, wenn sie den Bedürftigen hilft. Wenn sie Reichen hilft, macht sie diese faul.' Hz. Osman besaß die Welt, aber die Welt war nicht in seinem Herzen.",
       options: [],
     },
-
     // --- ABDURRAHMAN BIN AVF PFAD (DE) ---
     avf_start: {
       title: "Ankunft ohne Besitz",
-      text: "Du kommst als Flüchtling (Muhacir) nach Medina und hast alles in Mekka gelassen. Dein Bruder Sa'd bin Rabi bietet dir die Hälfte seines Vermögens an. Was tust du?",
+      text: "Du kommst als Flüchtling nach Medina und hast alles in Mekka gelassen. Dein Bruder Sa'd bietet dir die Hälfte seines Vermögens an. Was tust du?",
       options: [
         {
-          text: "Ich sage: 'Möge Allah dich belohnen, aber zeig mir nur den Weg zum Markt'.",
+          text: "Möge Allah dich belohnen, aber zeig mir nur den Weg zum Markt.",
           nextId: "avf_handel",
           isMatch: true,
           trait: "Ehrlichkeit",
-          characterChange: "Abdurrahman (Händler)",
+          characterChange: "Genügsamer Händler",
           wisdom:
-            "Er entschied sich für den Erfolg durch eigene Arbeit und wollte niemandem zur Last fallen.",
+            "Er wollte durch eigene Arbeit erfolgreich sein und niemandem zur Last fallen.",
         },
         {
-          text: "Ich nehme die Hilfe an, um schnell wieder wohlhabend zu werden.",
+          text: "Ich nehme die Hilfe an, um schnell wieder reich zu werden.",
           nextId: "bequem_ende",
+          characterChange: "Bequem und wenig hilfsbereit",
           isMatch: false,
         },
       ],
     },
     avf_handel: {
       title: "Der ehrliche Kaufmann",
-      text: "Du verkaufst Butter und Käse auf dem Markt. Du könntest die Preise heimlich durch Täuschung erhöhen und niemand würde es merken. Was tust du?",
+      text: "Du verkaufst Butter und Käse. Du könntest die Preise heimlich durch Täuschung erhöhen. Niemand würde es merken. Was tust du?",
       options: [
         {
           text: "Ich bleibe ehrlich und verkaufe zu einem fairen Preis.",
           nextId: "avf_spende",
           isMatch: true,
           trait: "Ehrlichkeit",
+          characterChange: "Zuerst Mensch, dann Händler",
           wisdom:
-            "Abdurrahman bin Avf sagte: 'Ich betrüge niemals und verberge niemals einen Mangel der Ware'.",
+            "Abdurrahman bin Avf sagte: 'Ich betrüge niemals und verstecke keine Mängel'.",
         },
         {
-          text: "Ich nutze die große Nachfrage und erhöhe die Preise.",
+          text: "Ich erhöhe die Preise wegen der hohen Nachfrage, um später vielleicht mehr helfen zu können.",
           nextId: "welt_ende",
+          characterChange: "Vom Gewinn getrieben",
           isMatch: false,
         },
       ],
     },
     avf_spende: {
       title: "Die Karawane der Güte",
-      text: "Du besitzt nun eine Karawane mit 700 Kamelen. In Medina herrscht Hunger. Behältst du die Waren oder spendest du sie?",
+      text: "Du besitzt 700 Kamele. In Medina herrscht Hunger. Teilst du deine Waren mit den Gläubigen?",
       options: [
         {
           text: "Ich spende die gesamte Karawane mit aller Ladung für Allahs Wohlgefallen.",
           nextId: "avf_finale",
           isMatch: true,
           trait: "Großzügigkeit",
+          characterChange: "Großzügiger und opferbereiter Händler",
           wisdom:
-            "Er spendete so viel, dass man sagte, die Hälfte der Bewohner Medinas lebe von seinem Vermögen.",
+            "Er spendete so viel, dass man sagte, die halbe Stadt lebe von seinem Besitz.",
         },
         {
-          text: "Handel ist mein Geschäft und dies ist eine Chance. Ich verkaufe teuer, um mein Kapital zu vergrößern.",
+          text: "Handel ist mein Job. Ich verkaufe teuer, um mein Kapital zu vergrößern.",
           nextId: "welt_ende",
+          characterChange: "Opportunistisch und profitgierig",
           isMatch: false,
         },
       ],
     },
     avf_finale: {
       title: "Der Segen des Händlers",
-      text: "Du hast den Weg von Abdurrahman bin Avf vollendet. Er war einer der Reichsten, aber sein Herz hing nicht an Besitz oder Eigentum. \n\nBediüzzaman Said Nursi sagt: 'Genügsamkeit (Sparsamkeit) ist die Ursache für Würde und Vollkommenheit.'",
+      text: "Du hast den Weg von Abdurrahman bin Avf vollendet. Er war reich, aber sein Herz hing nicht an Geld und Besitz. \n\nBediüzzaman Said Nursi sagt: 'Genügsamkeit ist der Grund für Würde und Vollkommenheit.'",
       options: [],
     },
-
     // --- HABBAB BIN ERET PFAD (DE) ---
     habbab_start: {
       title: "Das Eisen im Feuer",
-      text: "Du bist Habbab, ein Sklave und Schmied. Du bist Muslim geworden. Deine Besitzerin erfährt es und presst glühendes Eisen auf deinen Kopf. Was tust du?",
+      text: "Du bist der Schmied Habbab. Du bist Muslim geworden. Deine Besitzerin presst dir glühendes Eisen auf den Kopf. Was tust du?",
       options: [
         {
-          text: "Ich bin geduldig und halte am Glauben (Tawheed) fest.",
+          text: "Ich bin geduldig und halte am Glauben fest.",
           nextId: "habbab_lehrer",
           isMatch: true,
           trait: "Geduld",
-          characterChange: "Habbab (Der Standhafte)",
+          characterChange: "Standhaft und Stark",
           wisdom:
-            "Habbab war härter als das Eisen, das er schmiedete. Sein Glaube war wie eine unerschütterliche Festung.",
+            "Habbab war härter als das Eisen. Sein Glaube war wie eine Festung.",
         },
         {
-          text: "Ich gebe auf, um die Qualen zu beenden.",
+          text: "Ich gebe auf, um die Schmerzen zu beenden.",
           nextId: "bequem_ende",
+          characterChange: "Gibt früh auf",
           isMatch: false,
         },
       ],
     },
     habbab_lehrer: {
       title: "Der geheime Unterricht",
-      text: "Du lehrst Fatima bint al-Chattab und ihren Mann heimlich den Koran. Ihr Bruder Umar stürmt wütend herein. Fliehst du?",
+      text: "Du lehrst heimlich den Koran. Umar stürmt wütend herein. Es besteht Lebensgefahr. Fliehst du?",
       options: [
         {
-          text: "Ich bleibe und tue mein Bestes, um ihm das Licht der Wahrheit zu zeigen.",
+          text: "Ich bleibe und versuche, ihm das Licht der Wahrheit zu zeigen.",
           nextId: "habbab_finale",
           isMatch: true,
           trait: "Mut",
-          wisdom:
-            "Habbabs Standhaftigkeit in diesem Moment war die Ursache dafür, dass Umar (ra) Muslim wurde.",
+          characterChange: "Fleißig und Bemüht",
+          wisdom: "Habbabs Mut führte dazu, dass Umar (ra) Muslim wurde.",
         },
         {
-          text: "Ich fliehe, um mein Leben zu retten.",
+          text: "Ich fliehe, um mein Leben zu retten, damit ich später weitermachen kann.",
           nextId: "angst_ende",
+          characterChange: "Ausweichend",
           isMatch: false,
         },
       ],
     },
     habbab_finale: {
       title: "Gereinigtes Gold",
-      text: "Du hast den Weg von Habbab vollendet. Ein Sklave, der zum Lehrer der Umma wurde. \n\nBediüzzaman Said Nursi sagt: 'Dass ihr in diese schwere Prüfung geraten seid und man euch prüft, ob ihr Gold oder Kupfer seid, war für euren Dienst im Namen der Wahrheit absolut notwendig.'",
+      text: "Du hast den Weg von Habbab vollendet. Ein Sklave, der zum Lehrer wurde. \n\nBediüzzaman Said Nursi sagt: 'Diese harte Prüfung war nötig, um zu zeigen, ob ihr Gold oder Kupfer seid.'",
       options: [],
     },
-
     // --- HZ. ALI PFAD (DE) ---
     ali_start: {
       title: "Das erste Kind",
-      text: "Du bist erst 10 Jahre alt und siehst deinen Cousin, den Propheten (sav), beten. Du spürst die Wahrheit. Was tust du?",
+      text: "Du bist 10 Jahre alt und siehst den Propheten beten. Du spürst die Wahrheit. Was tust du?",
       options: [
         {
           text: "Ich nehme den Islam sofort an, ohne jemanden zu fragen.",
           nextId: "ali_hidschra",
           isMatch: true,
           trait: "Mut",
-          characterChange: "Hz. Ali (Jung)",
+          characterChange: "Junger Glaube",
           wisdom:
-            "Hz. Ali war das erste Kind, das den Islam annahm. Er zeigte schon früh große Weisheit.",
+            "Hz. Ali war das erste Kind im Islam. Er zeigte schon früh große Weisheit.",
         },
         {
-          text: "Ich warte und frage erst meinen Vater um Erlaubnis.",
+          text: "Ich warte und frage erst meinen Vater.",
           nextId: "beobachter_weg",
           isMatch: false,
-          trait: "Weisheit",
+          characterChange: "Kindliches Denken",
         },
       ],
     },
     ali_hidschra: {
       title: "Die gefährliche Nacht",
-      text: "Feinde belagern das Haus, um den Propheten zu töten. Er bittet dich, dich in sein Bett zu legen. Das ist lebensgefährlich. Was tust du?",
+      text: "Feinde belagern das Haus. Der Prophet bittet dich, in seinem Bett zu schlafen. Es ist lebensgefährlich. Was tust du?",
       options: [
         {
-          text: "Ich lege mich furchtlos in sein Bett, damit er sicher auswandern kann.",
+          text: "Ich schlafe furchtlos im Bett, damit er sicher fliehen kann.",
           nextId: "ali_khaybar",
           isMatch: true,
           trait: "Mut",
-          characterChange: "Hz. Ali (Beschützer)",
-          wisdom: "Hz. Ali war bereit, sein Leben für den Propheten zu opfern.",
+          characterChange: "Held des Mutes",
+          wisdom: "Hz. Ali war bereit, alles für den Propheten zu opfern.",
         },
         {
-          text: "Ich suche nach einem sichereren Weg, um zu helfen.",
+          text: "Ich suche einen sichereren Weg, um zu helfen.",
           nextId: "angst_ende",
+          characterChange: "Zögerlicher Helfer",
           isMatch: false,
         },
       ],
     },
     ali_khaybar: {
       title: "Das Tor von Khaybar",
-      text: "Die Festung Khaybar kann nicht erobert werden. Der Prophet gibt dir die Fahne. Was tust du?",
+      text: "Die Festung Khaybar kann nicht erobert werden. Der Prophet gibt dir das Banner. Was tust du?",
       options: [
         {
-          text: "Ich stürme mit der Kraft des Glaubens voran und reiße das Tor auf.",
+          text: "Ich stürme voran, um das Tor zu öffnen und den Gläubigen zu helfen.",
           nextId: "ali_finale",
           isMatch: true,
           trait: "Mut",
           characterChange: "Löwe Allahs",
           wisdom:
-            "Aufgrund seiner Unbesiegbarkeit auf dem Schlachtfeld erhielt Hz. Ali den Beinamen 'Asadullah' (Löwe Allahs).",
+            "Wegen seiner Unbesiegbarkeit erhielt er den Namen 'Asadullah'.",
         },
         {
-          text: "Ich warte darauf, dass die anderen eine Strategie entwickeln.",
+          text: "Ich warte, bis jemand anderes das Tor öffnet.",
           nextId: "bequem_ende",
           isMatch: false,
+          characterChange: "Mitläufer, kein Führer",
         },
       ],
     },
     ali_finale: {
       title: "Stadt des Wissens",
-      text: "Du hast den Weg von Hz. Ali vollendet. Der Prophet sagte: 'Ich bin die Stadt des Wissens, und Ali ist ihr Tor.' \n\nBediüzzaman Said Nursi sagt: 'Die Quelle und der Beschützer der Sunna, die verpflichtet ist, sie in jeder Hinsicht zu bewahren, ist die Ahl-i Bayt (die Familie des Propheten).'",
+      text: "Du hast den Weg von Hz. Ali vollendet. Der Prophet sagte: 'Ich bin die Stadt des Wissens, und Ali ist ihr Tor.' \n\nBediüzzaman Said Nursi sagt: 'Die Familie des Propheten (Ahl-i Bayt) ist die Quelle und der Beschützer der Sunna.'",
       options: [],
     },
-
     // --- ABDULLAH IBN MESUD PFAD (DE) ---
     mesud_start: {
       title: "Begegnung in der Wüste",
-      text: "Du bist ein junger Hirte in Mekka. Ein Mann bittet dich um Milch von einer Ziege, die dir nicht gehört, weil er sehr hungrig ist. Was tust du?",
+      text: "Du bist ein junger Hirte. Ein hungriger Mann bittet dich um Milch von einer fremden Ziege. Was tust du?",
       options: [
         {
-          text: "Ich lehne ab, da die Ziegen nicht mein Eigentum sind.",
+          text: "Ich lehne ab, weil die Ziegen mir nicht gehören.",
           nextId: "mesud_wunder",
           isMatch: true,
           trait: "Ehrlichkeit",
-          characterChange: "Dürüst Çoban",
-          wisdom:
-            "Ehrlichkeit gegenüber dem Anvertrauten (Emanet) ist die Basis des Glaubens.",
+          characterChange: "Ehrlicher Hirte",
+          wisdom: "Du hast Treue zum Anvertrauten bewiesen.",
         },
         {
-          text: "Ich gebe ihm die Milch als Geste der Großzügigkeit.",
+          text: "Ich gebe ihm die Milch, um großzügig zu sein.",
           nextId: "beobachter_weg",
           isMatch: false,
-          trait: "Großzügigkeit",
-          characterChange: "Großzügiger Fremder",
-          wisdom:
-            "Großzügigkeit ist gut, aber man darf das Anvertraute nicht missbrauchen.",
+          characterChange: "Großzügig mit fremdem Besitz",
+          wisdom: "Großzügigkeit ist gut, aber Treue geht vor.",
         },
       ],
     },
     mesud_wunder: {
       title: "Das Milch-Wunder",
-      text: "Du merkst, dass dieser Mann der Prophet ist. Er berührt eine unfruchtbare Ziege, und sie füllt sich mit Milch. Was tust du?",
+      text: "Du merkst, dass dieser Mann besonders ist. Er füllt eine unfruchtbare Ziege mit Milch. Was tust du?",
       options: [
         {
-          text: "Ich flehe ihn an: 'Lehre mich von diesen Worten!'",
+          text: "Ich flehe ihn an: 'Lehre mich diese Worte!'",
           nextId: "mesud_bekenntnis",
           isMatch: true,
           trait: "Weisheit",
@@ -284,39 +291,38 @@ const storyData = {
           text: "Ich bekomme Angst und laufe weg.",
           nextId: "angst_ende",
           isMatch: false,
-          wisdom: "Angst verhindert, die Wahrheit zu erkennen.",
+          characterChange: "Sehr Ängstlich",
+          wisdom: "Angst verhindert, die Wahrheit zu sehen.",
         },
       ],
     },
     mesud_bekenntnis: {
       title: "Der sechste Muslim",
-      text: "Du hast den Tawheed gelernt. Bekennst du deinen Glauben als sechster Muslim? Das wird Konsequenzen haben.",
+      text: "Du hast den Tawheed gelernt. Bekennst du deinen Glauben öffentlich?",
       options: [
         {
           text: "Ja, ich bekenne mich sofort, um den Propheten zu unterstützen.",
           nextId: "mesud_diener",
           isMatch: true,
           trait: "Mut",
-          characterChange: "Abdullah ibn Mesud",
-          wisdom:
-            "Wahrer Mut liegt nicht in der Körperkraft, sondern im Herzen.",
+          characterChange: "Unterstützer des Propheten",
+          wisdom: "Wahrer Mut liegt im Herzen, nicht in den Muskeln.",
         },
         {
           text: "Ich bleibe lieber im Verborgenen.",
           nextId: "beobachter_weg",
           isMatch: false,
-          trait: "Weisheit",
-          wisdom:
-            "Vorsicht ist gut, aber Ibn Mesud wählte die direkte Hingabe.",
+          characterChange: "Zur falschen Zeit schüchtern",
+          wisdom: "Vorsicht ist gut, aber Hingabe ist besser.",
         },
       ],
     },
     mesud_diener: {
       title: "Diener des Propheten",
-      text: "Der Prophet braucht jemanden, der seine Sachen trägt. Akzeptierst du das?",
+      text: "Der Prophet braucht einen Diener für seine Sachen. Akzeptierst du?",
       options: [
         {
-          text: "Ja, ich akzeptiere es, um ihm so nah wie möglich zu sein.",
+          text: "Ja, um ihm so nah wie möglich zu sein.",
           nextId: "mesud_kaaba",
           isMatch: true,
           trait: "Geduld",
@@ -325,190 +331,198 @@ const storyData = {
             "Durch seinen Dienst lernte er den Koran direkt von der Quelle.",
         },
         {
-          text: "Nein, ich suche eine prestigevollere Aufgabe.",
+          text: "Nein, ich suche eine angesehenere Arbeit.",
           nextId: "welt_ende",
+          characterChange: "Sucht Prestige",
           isMatch: false,
         },
       ],
     },
     mesud_kaaba: {
       title: "Mut an der Kaaba",
-      text: "Wirst du den Koran laut an der Kaaba vorlesen? Die Götzendiener könnten dich dafür töten.",
+      text: "Wirst du den Koran laut an der Kaaba vorlesen? Die Feinde könnten dich töten.",
       options: [
         {
-          text: "Ich sage: 'Allah wird mich schützen' und gehe lesen.",
+          text: "Allah wird mich schützen. Ich werde dort lesen.",
           nextId: "mesud_folter",
           isMatch: true,
           trait: "Mut",
-          wisdom:
-            "Er war der erste Sahaba nach dem Propheten, der öffentlich in Mekka aus dem Koran las.",
+          characterChange: "Furchtloser Sprecher",
+          wisdom: "Er las als Erster öffentlich in Mekka aus dem Koran.",
         },
         {
-          text: "Das ist zu riskant und gefährlich. Ich bin unsicher und mache es nicht.",
+          text: "Das ist zu riskant. Ich mache es lieber nicht.",
           nextId: "lokal_weg",
+          characterChange: "Zögernd",
           isMatch: false,
         },
       ],
     },
     mesud_folter: {
       title: "Unerschütterlichkeit",
-      text: "Die Götzendiener haben dich blutig geschlagen. Gehst du morgen wieder hin?",
+      text: "Du wurdest blutig geschlagen. Gehst du morgen wieder hin?",
       options: [
         {
           text: "Ja, ich werde morgen wieder dort lesen!",
           nextId: "mesud_finale",
           isMatch: true,
           trait: "Geduld",
-          wisdom: "Seine Entschlossenheit war größer als seine Wunden.",
+          characterChange: "Beharrlich und Zielstrebig",
+          wisdom: "Sein Wille war größer als seine Schmerzen.",
         },
         {
-          text: "Nein, das reicht. Sie haben gehört, was sie hören mussten.",
+          text: "Nein, das reicht jetzt. Sie haben es gehört.",
           nextId: "bequem_ende",
+          characterChange: "Nicht standhaft in der Wahrheit",
           isMatch: false,
         },
       ],
     },
     mesud_finale: {
       title: "Gelehrter Sahaba",
-      text: "Du hast den Weg von Ibn Mesud vollendet. \n\nBediüzzaman Said Nursi: 'Iman ist sowohl Licht als auch Kraft. Wer den wahren Iman erlangt, kann dem Universum trotzen.'",
+      text: "Du hast den Weg von Ibn Mesud vollendet. \n\nBediüzzaman Said Nursi: 'Iman ist Licht und Kraft. Wer wahren Iman hat, kann dem Universum trotzen.'",
       options: [],
     },
 
     // --- SA'D BIN EBI VAKKAS PFAD (DE) ---
     sad_start: {
       title: "Prüfung der Liebe",
-      text: "Deine Mutter tritt in einen Hungerstreik, damit du den Islam verlässt. Was tust du?",
+      text: "Deine Mutter macht einen Hungerstreik gegen deinen Glauben. Was tust du?",
       options: [
         {
-          text: "Ich bleibe entschlossen: 'Selbst wenn sie hundert Leben hätte und alle durch Hunger verlöre, würde ich nicht weichen.'",
+          text: "Ich bleibe fest: Selbst wenn sie hundert Leben verlöre, würde ich nicht weichen.",
           nextId: "sad_uhud",
           isMatch: true,
           trait: "Mut",
-          characterChange: "Sa'd bin Ebi Vakkas",
+          characterChange: "Wahre Liebe",
           wisdom: "Sa'd bewies, dass die Liebe zu Allah über allem steht.",
         },
         {
-          text: "Ich kann meine Mutter nicht so leiden sehen und gebe auf.",
+          text: "Ich kann meine Mutter nicht leiden sehen und gebe auf.",
           nextId: "welt_ende",
+          characterChange: "Zu starke Familienbindung",
           isMatch: false,
         },
       ],
     },
     sad_uhud: {
-      title: "Der Bogenschütze des Propheten",
-      text: "Du bist als Bogenschütze in Uhud. Der Prophet (sav) sagt: 'Schieß, oh Sa'd!'. Plötzlich wendet sich das Blatt gegen die Muslime. Bleibst du bei ihm, um ihn zu schützen?",
+      title: "Der Bogenschütze",
+      text: "In Uhud sagt der Prophet: 'Schieß, oh Sa'd!'. Die Lage wird gefährlich. Bleibst du bei ihm?",
       options: [
         {
-          text: "Ich schieße alle Pfeile ab und ziehe dann mein Schwert, um den Propheten zu verteidigen.",
+          text: "Ich schieße alle Pfeile ab und schütze den Propheten mit meinem Schwert.",
           nextId: "sad_finale",
           isMatch: true,
           trait: "Mut",
-          wisdom:
-            "Er war der Bogenschütze, zu dem der Prophet sagte: 'Mögen meine Eltern für dich geopfert sein'.",
+          characterChange: "Beschützer des Propheten",
+          wisdom: "Der Prophet ehrte ihn für seine Treue als Bogenschütze.",
         },
         {
-          text: "Ich muss mein eigenes Leben retten; wie kann ich sonst später nützlich sein?",
+          text: "Ich muss mein Leben retten, um später nützlich zu sein.",
           nextId: "bequem_ende",
+          characterChange: "Denkt zuerst an sich selbst",
           isMatch: false,
         },
       ],
     },
     sad_finale: {
       title: "Löwe des Islam",
-      text: "Du hast den Weg von Sa'd vollendet. Du wurdest ein Kommandant, dessen Gebete stets erhört wurden.",
+      text: "Du hast Sa'ds Weg vollendet. Du wurdest ein Kommandant, dessen Gebete erhört wurden.",
       options: [],
     },
 
-    // --- MUS'AB BIN UMEYR PFAD (DE) ---
+    // --- MUS'AB BİN UMEYR PFAD (DE) ---
     musab_start: {
       title: "Der Duft von Mekka",
-      text: "Du bist ein reicher Jüngling. Weil du Muslim geworden bist, droht deine Mutter, dich zu verstoßen und das Erbe zu streichen.",
+      text: "Du bist reich. Wegen deines Glaubens will deine Mutter dich verstoßen. Was wählst du?",
       options: [
         {
-          text: "Ich esse lieber Essensreste aus dem Müll und wähle den Glauben.",
+          text: "Ich wähle den Glauben und verzichte auf allen Luxus.",
           nextId: "musab_botschafter",
           isMatch: true,
           trait: "Mut",
-          characterChange: "Mus'ab b. Umeyr",
-          wisdom:
-            "Mus'ab ließ die materielle Welt zurück und nahm den Glauben mit, den er über den Tod hinaus tragen konnte.",
+          characterChange: "Große Opferbereitschaft",
+          wisdom: "Mus'ab tauschte Reichtum gegen den ewigen Glauben ein.",
         },
         {
-          text: "Ich wähle mein Erbe, damit ich später mit dem Geld dem Islam dienen kann.",
+          text: "Ich wähle das Erbe, um später mit dem Geld zu helfen.",
           nextId: "welt_ende",
+          characterChange: "Hängt an weltlichem Besitz",
           isMatch: false,
         },
       ],
     },
     musab_botschafter: {
       title: "Der erste Lehrer",
-      text: "Der Prophet sendet dich als Botschafter nach Medina. Gehst du?",
+      text: "Der Prophet sendet dich als Lehrer nach Medina. Gehst du?",
       options: [
         {
-          text: "Ein einziger Blick des Propheten (sav) ist für mich wie ein Befehl.",
+          text: "Ein einziger Blick des Propheten ist für mich ein Befehl.",
           nextId: "musab_uhud",
           isMatch: true,
           trait: "Weisheit",
-          characterChange: "Lehrer Mus'ab",
-          wisdom:
-            "In Medina öffneten sich die Herzen und die Tore der Stadt für die Muslime.",
+          characterChange: "Der erste Lehrer",
+          wisdom: "Durch ihn öffneten sich die Herzen Medinas für den Islam.",
         },
         {
-          text: "Diese Verantwortung ist zu schwer. Ich lehne ab, aus Angst zu versagen. Zudem ist die Reise beschwerlich.",
+          text: "Die Verantwortung ist zu groß. Die Reise ist zu schwer für mich.",
           nextId: "lokal_weg",
+          characterChange: "Mangel an Gottvertrauen",
           isMatch: false,
         },
       ],
     },
     musab_uhud: {
       title: "Das Banner von Uhud",
-      text: "Du trägst das Banner und wirst verletzt. Wenn das Banner fällt, sinkt die Moral der Muslime. Was wirst du tun?",
+      text: "Du trägst das Banner und bist verletzt. Wenn es fällt, sinkt die Moral. Was tust du?",
       options: [
         {
-          text: "Ich weiß, was dieses Banner bedeutet. Ich werde es bis zum letzten Atemzug nicht loslassen.",
+          text: "Ich halte das Banner bis zu meinem letzten Atemzug fest.",
           nextId: "musab_finale",
           isMatch: true,
           trait: "Mut",
+          characterChange: "Bannerträger",
           wisdom:
-            "Während er das Banner schützte, wurden seine Arme und Beine verletzt und er starb als Märtyrer.",
+            "Er starb als Märtyrer, während er das Banner mit seinem Körper schützte.",
         },
         {
-          text: "Ich lasse das Banner los, gehe zur Sanitätsstation und komme später zurück, um es wieder aufzuheben.",
+          text: "Ich hole Hilfe und versuche später, das Banner wieder aufzuheben.",
           nextId: "angst_ende",
+          characterChange: "Unvernunft in der Krise",
           isMatch: false,
         },
       ],
     },
     musab_finale: {
       title: "Der erste Botschafter",
-      text: "Du hast Mus'abs Weg vollendet. Bediüzzaman sagt: 'Ich habe mit Gewissheit geglaubt und erkannt, dass diese Welt ein Gästehaus ist, das sich schnell wandelt. Wenn der Herr des Gästehauses barmherzig ist, dann ist jeder ein Freund; wenn nicht, wird jeder Ort zur Last für das Herz.'",
+      text: "Du hast Mus'abs Weg vollendet. Bediüzzaman sagt: 'Diese Welt ist ein Gästehaus. Wenn der Herr barmherzig ist, ist jeder Ort ein Zuhause.'",
       options: [],
     },
 
     // --- ALLGEMEINE ENDEN (DE) ---
     beobachter_weg: {
-      title: "Ein anderer Weg",
-      text: "Du hast nach eigenem Ermessen klug und vorsichtig gehandelt, aber du hast den Weg der Sahaba verlassen. Leider hast du die große Belohnung verpasst.",
+      title: "Anderer Weg",
+      text: "Du warst vorsichtig, aber du hast den Weg der Sahaba verlassen. Die große Chance ist vorbei.",
       options: [],
     },
     angst_ende: {
       title: "Weg beendet",
-      text: "Die Angst war stärker. Der Teufel täuscht den Menschen leicht mit Dingen wie Angst, Gier oder Ruhmsucht.",
+      text: "Die Angst hat gewonnen. Der Teufel nutzt Angst und Gier, um uns zu täuschen.",
       options: [],
     },
     bequem_ende: {
       title: "Weg beendet",
-      text: "Du hast die Bequemlichkeit gewählt. Doch ohne eine starke Standhaftigkeit und Beständigkeit im heiligen Dienst des Lichts beginnt Trägheit, Schwäche und Stillstand.",
+      text: "Du hast Bequemlichkeit gewählt. Ohne Standhaftigkeit im Dienst des Lichts entsteht Stillstand und Faulheit.",
       options: [],
     },
     welt_ende: {
       title: "Weg beendet",
-      text: "Der weltliche Besitz war süßer als der Glaube. Der Glaube macht den Menschen erst zum Menschen. Er macht ihn vielleicht sogar zum König. Daher ist die eigentliche Aufgabe des Menschen der Glaube und das Gebet. Unglaube macht den Menschen zu einem schwachen, raubtierartigen Wesen.",
+      text: "Besitz war dir wichtiger als Glaube. Glaube macht den Menschen wertvoll. Ohne ihn ist der Mensch schwach.",
       options: [],
     },
     lokal_weg: {
       title: "Stiller Helfer",
-      text: "Du hast im Stillen etwas getan, aber es war nicht wie bei den Sahaba. Vertraue auf Allah, damit du dich von der Bettelei bei der Schöpfung und dem Zittern vor jedem Ereignis befreist.",
+      text: "Du hast zwar geholfen, aber nicht wie ein Sahaba. Vertraue auf Allah, um frei von Angst zu sein.",
       options: [],
     },
   },
@@ -567,8 +581,7 @@ const storyData = {
           isMatch: true,
           trait: "Weisheit",
           characterChange: "Bilge Lider ve Barış Elçisi",
-          wisdom:
-            "Bugün tüm dünya aynı Mushaf üzerinden Kur'an okumaktadır.",
+          wisdom: "Bugün tüm dünya aynı Mushaf üzerinden Kur'an okumaktadır.",
         },
         {
           text: "İnsanları Kur'an'ı istedikleri gibi okumakta serbest bırakırım.",
@@ -732,7 +745,8 @@ const storyData = {
           isMatch: true,
           trait: "Mut",
           characterChange: "Şecaat ve Cesaret Kahramanı",
-          wisdom: "Hz.Ali zamanını, malını, sevdiklerini ve canını Peygamber için feda etmeye hazırdı.",
+          wisdom:
+            "Hz.Ali zamanını, malını, sevdiklerini ve canını Peygamber için feda etmeye hazırdı.",
         },
         {
           text: "Yardım etmek için daha güvenli bir yol ararım.",
